@@ -445,14 +445,12 @@ Las contribuciones son bienvenidas. Por favor:
 **Alejandro de Mendoza Tovar**
 
 - 🎓 Universidad Internacional de La Rioja (UNIR)
-- 🔗 GitHub: [@alejandroDeMendoza](https://github.com/alejandroDeMendoza)
-- 💼 LinkedIn: [Alejandro de Mendoza](https://linkedin.com/in/alejandro-de-mendoza)
+- 🔗 GitHub: [@alejandroDeMendoza](https://github.com/AlejoTechEngineer)
 
 ### Información Académica
 
 - **Asignatura:** Desarrollo de Aplicaciones en Red
 - **Profesor:** Ing. Juan Carlos Reyes Figueroa
-- **Semestre:** Quinto
 - **Año:** 2025
 
 ---
