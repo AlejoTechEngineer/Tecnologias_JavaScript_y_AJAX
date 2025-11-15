@@ -445,7 +445,6 @@ Las contribuciones son bienvenidas. Por favor:
 **Alejandro de Mendoza Tovar**
 
 - 🎓 Universidad Internacional de La Rioja (UNIR)
-- 📧 Email: alejandro.demendoza@estudiante.unir.net
 - 🔗 GitHub: [@alejandroDeMendoza](https://github.com/alejandroDeMendoza)
 - 💼 LinkedIn: [Alejandro de Mendoza](https://linkedin.com/in/alejandro-de-mendoza)
 
@@ -525,8 +524,6 @@ SOFTWARE.
 Si encuentras algún problema o tienes preguntas:
 
 1. **Issues:** Abre un issue en GitHub
-2. **Email:** alejandro.demendoza@estudiante.unir.net
-3. **Documentación:** Consulta este README
 
 ---
 
