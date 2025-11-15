@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%F0%9F%9A%80-laboratorio-javascript-y-ajax">🚀 Laboratorio JavaScript y AJAX</h1>
+<h2 id="desarrollo-de-aplicaciones-web-interactivas">Desarrollo de Aplicaciones Web Interactivas</h2>
+<p><img src="https://img.shields.io/badge/Jekyll-4.3.0-red?style=flat-square&amp;logo=jekyll" alt="Jekyll">
+<img src="https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat-square&amp;logo=javascript" alt="JavaScript">
+<img src="https://img.shields.io/badge/HTML5-Semantico-orange?style=flat-square&amp;logo=html5" alt="HTML5">
+<img src="https://img.shields.io/badge/CSS3-Moderno-blue?style=flat-square&amp;logo=css3" alt="CSS3">
+<img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License"></p>
+<hr>
+<h2 id="%F0%9F%93%8B-tabla-de-contenidos">📋 Tabla de Contenidos</h2>
+<ul>
+<li><a href="#-descripci%C3%B3n">Descripción</a></li>
+<li><a href="#-caracter%C3%ADsticas">Características</a></li>
+<li><a href="#-requisitos-previos">Requisitos Previos</a></li>
+<li><a href="#-instalaci%C3%B3n">Instalación</a></li>
+<li><a href="#-ejecuci%C3%B3n-del-proyecto">Ejecución del Proyecto</a></li>
+<li><a href="#-estructura-del-proyecto">Estructura del Proyecto</a></li>
+<li><a href="#-ejercicios-implementados">Ejercicios Implementados</a></li>
+<li><a href="#-uso-de-la-aplicaci%C3%B3n">Uso de la Aplicación</a></li>
+<li><a href="#-tecnolog%C3%ADas-utilizadas">Tecnologías Utilizadas</a></li>
+<li><a href="#-problemas-conocidos">Problemas Conocidos</a></li>
+<li><a href="#-contribuciones">Contribuciones</a></li>
+<li><a href="#-autor">Autor</a></li>
+<li><a href="#-licencia">Licencia</a></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%96-descripci%C3%B3n">📖 Descripción</h2>
+<p>Este proyecto es un <strong>laboratorio académico</strong> desarrollado para la asignatura de <strong>Desarrollo de Aplicaciones en Red</strong>, que implementa ejercicios prácticos de <strong>JavaScript</strong> y <strong>AJAX</strong> integrados en un blog personal creado con <strong>Jekyll</strong>.</p>
+<p>El laboratorio demuestra competencias en:</p>
+<ul>
+<li>✅ Manipulación del DOM</li>
+<li>✅ Validación de datos con JavaScript</li>
+<li>✅ Expresiones regulares avanzadas</li>
+<li>✅ Peticiones asíncronas con XMLHttpRequest</li>
+<li>✅ Manejo de estados HTTP</li>
+<li>✅ Procesamiento de respuestas JSON</li>
+</ul>
+<hr>
+<h2 id="%E2%9C%A8-caracter%C3%ADsticas">✨ Características</h2>
+<h3 id="%F0%9F%94%B9-ejercicios-javascript">🔹 Ejercicios JavaScript</h3>
+<ol>
+<li>
+<p><strong>Detector de Palíndromos</strong></p>
+<ul>
+<li>Normalización Unicode (NFD)</li>
+<li>Eliminación de tildes y caracteres especiales</li>
+<li>Comparación bidireccional de cadenas</li>
+</ul>
+</li>
+<li>
+<p><strong>Comparador de Números</strong></p>
+<ul>
+<li>Validación de entrada numérica</li>
+<li>Soporte para números decimales</li>
+<li>Mensajes contextuales según resultado</li>
+</ul>
+</li>
+<li>
+<p><strong>Extractor de Vocales</strong></p>
+<ul>
+<li>Uso de expresiones regulares</li>
+<li>Captura de vocales con y sin tildes</li>
+<li>Visualización ordenada de resultados</li>
+</ul>
+</li>
+<li>
+<p><strong>Contador de Vocales</strong></p>
+<ul>
+<li>Conteo individual de cada vocal</li>
+<li>Normalización de texto para precisión</li>
+<li>Presentación visual con gráficos de barras</li>
+</ul>
+</li>
+</ol>
+<h3 id="%F0%9F%94%B9-ejercicios-ajax">🔹 Ejercicios AJAX</h3>
+<ol>
+<li>
+<p><strong>Carga de URL por Defecto</strong></p>
+<ul>
+<li>URL predeterminada al cargar la página</li>
+<li>Ejemplo: JSONPlaceholder API</li>
+</ul>
+</li>
+<li>
+<p><strong>Descarga de Contenidos</strong></p>
+<ul>
+<li>Petición GET asíncrona</li>
+<li>Procesamiento de respuestas JSON y texto</li>
+<li>Manejo de errores y CORS</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitoreo de Estados</strong></p>
+<ul>
+<li>Visualización de los 5 estados readyState</li>
+<li>Actualización en tiempo real</li>
+<li>Timestamps de cada cambio de estado</li>
+</ul>
+</li>
+<li>
+<p><strong>Visualización de Cabeceras HTTP</strong></p>
+<ul>
+<li>Extracción con <code>getAllResponseHeaders()</code></li>
+<li>Formato legible para el usuario</li>
+<li>Detección de restricciones CORS</li>
+</ul>
+</li>
+<li>
+<p><strong>Código y Texto de Estado</strong></p>
+<ul>
+<li>Visualización del código HTTP (200, 404, etc.)</li>
+<li>Texto descriptivo del estado</li>
+<li>Indicadores visuales de éxito/error</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="%F0%9F%94%A7-requisitos-previos">🔧 Requisitos Previos</h2>
+<p>Asegúrate de tener instalados los siguientes componentes:</p>
+<h3 id="windows">Windows</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Ruby (versión 3.0 o superior)</span>
+winget install RubyInstallerTeam.RubyWithDevKit.<span class="hljs-number">3.2</span>
+
+<span class="hljs-comment"># Bundler (instalado automáticamente con Ruby)</span>
+gem install bundler
+
+<span class="hljs-comment"># Jekyll</span>
+gem install jekyll
+</div></code></pre>
+<h3 id="macos">macOS</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Ruby (ya viene preinstalado, o usar Homebrew)</span>
+brew install ruby
+
+<span class="hljs-comment"># Bundler y Jekyll</span>
+gem install bundler jekyll
+</div></code></pre>
+<h3 id="linux-ubuntudebian">Linux (Ubuntu/Debian)</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Ruby y dependencias</span>
+sudo apt update
+sudo apt install ruby-full build-essential zlib1g-dev
+
+<span class="hljs-comment"># Bundler y Jekyll</span>
+gem install bundler jekyll
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%93%A6-instalaci%C3%B3n">📦 Instalación</h2>
+<h3 id="1-clonar-el-repositorio">1. Clonar el Repositorio</h3>
+<pre class="hljs"><code><div>git <span class="hljs-built_in">clone</span> https://github.com/tu-usuario/laboratorio-js-ajax.git
+<span class="hljs-built_in">cd</span> laboratorio-js-ajax
+</div></code></pre>
+<h3 id="2-instalar-dependencias">2. Instalar Dependencias</h3>
+<pre class="hljs"><code><div>bundle install
+</div></code></pre>
+<p>Este comando instalará todas las gemas necesarias definidas en el <code>Gemfile</code>:</p>
+<ul>
+<li><code>jekyll</code> (~&gt; 4.3.0)</li>
+<li><code>jekyll-theme-cayman</code></li>
+<li><code>jekyll-feed</code></li>
+</ul>
+<h3 id="3-verificar-instalaci%C3%B3n">3. Verificar Instalación</h3>
+<pre class="hljs"><code><div>bundle <span class="hljs-built_in">exec</span> jekyll --version
+</div></code></pre>
+<p>Deberías ver algo como: <code>jekyll 4.3.0</code></p>
+<hr>
+<h2 id="%F0%9F%9A%80-ejecuci%C3%B3n-del-proyecto">🚀 Ejecución del Proyecto</h2>
+<h3 id="modo-desarrollo-con-auto-recarga">Modo Desarrollo (con auto-recarga)</h3>
+<pre class="hljs"><code><div>bundle <span class="hljs-built_in">exec</span> jekyll serve
+</div></code></pre>
+<p>Salida esperada:</p>
+<pre class="hljs"><code><div>Configuration file: .../_config.yml
+            Source: .../Blog_Alejandro_De_Mendoza_Tovar
+       Destination: .../Blog_Alejandro_De_Mendoza_Tovar/_site
+ Incremental build: disabled
+      Generating...
+                    done in 1.2 seconds.
+ Auto-regeneration: enabled
+    Server address: http://127.0.0.1:4000
+  Server running... press ctrl-c to stop.
+</div></code></pre>
+<h3 id="acceder-a-la-aplicaci%C3%B3n">Acceder a la Aplicación</h3>
+<p>Abre tu navegador y visita:</p>
+<ul>
+<li><strong>Página Principal:</strong> <a href="http://127.0.0.1:4000/">http://127.0.0.1:4000/</a></li>
+<li><strong>Laboratorio JS/AJAX:</strong> <a href="http://127.0.0.1:4000/laboratorio-js-ajax/">http://127.0.0.1:4000/laboratorio-js-ajax/</a></li>
+</ul>
+<h3 id="modo-producci%C3%B3n-build-est%C3%A1tico">Modo Producción (build estático)</h3>
+<pre class="hljs"><code><div>bundle <span class="hljs-built_in">exec</span> jekyll build
+</div></code></pre>
+<p>Los archivos generados estarán en la carpeta <code>_site/</code></p>
+<h3 id="detener-el-servidor">Detener el Servidor</h3>
+<p>Presiona <code>Ctrl + C</code> en la terminal.</p>
+<hr>
+<h2 id="%F0%9F%93%81-estructura-del-proyecto">📁 Estructura del Proyecto</h2>
+<pre class="hljs"><code><div>Blog_Alejandro_De_Mendoza_Tovar/
+│
+├── _config.yml                  # Configuración de Jekyll
+├── Gemfile                      # Dependencias del proyecto
+├── Gemfile.lock                 # Versiones exactas de gemas
+├── README.md                    # Este archivo
+│
+├── _includes/                   # Componentes reutilizables
+│   ├── header.html             # Header con navegación
+│   └── footer.html             # Footer del sitio
+│
+├── _layouts/                    # Plantillas de página
+│   ├── default.html            # Layout principal
+│   └── post.html               # Layout para posts
+│
+├── _posts/                      # Artículos del blog
+│   ├── 2025-10-26-introduccion-al-blog.md
+│   ├── 2025-10-27-desarrollo-web-moderno.md
+│   └── 2025-10-28-inteligencia-artificial.md
+│
+├── assets/                      # Recursos estáticos
+│   ├── css/
+│   │   ├── style.scss          # Estilos principales
+│   │   └── custom.css          # Estilos personalizados
+│   └── images/                 # Imágenes del blog
+│
+├── laboratorio-js-ajax.html    # ⭐ Página del laboratorio
+├── index.html                   # Página de inicio
+├── blog.md                      # Lista de posts
+├── about.md                     # Página Acerca de
+│
+└── _site/                       # Sitio generado (no versionar)
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%8E%AF-ejercicios-implementados">🎯 Ejercicios Implementados</h2>
+<h3 id="javascript-4-ejercicios">JavaScript (4 ejercicios)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Ejercicio</th>
+<th>Descripción</th>
+<th>Técnicas Utilizadas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Palíndromo</strong></td>
+<td>Detecta si una cadena es palíndromo</td>
+<td><code>normalize()</code>, <code>replace()</code>, <code>reverse()</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Comparador</strong></td>
+<td>Compara dos números y muestra el mayor</td>
+<td><code>parseFloat()</code>, <code>isNaN()</code>, validación</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Extractor</strong></td>
+<td>Extrae vocales de una frase</td>
+<td>Regex: <code>/[aeiouáéíóúAEIOUÁÉÍÓÚ]/g</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Contador</strong></td>
+<td>Cuenta cuántas veces aparece cada vocal</td>
+<td><code>match()</code>, normalización, conteo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ajax-5-ejercicios">AJAX (5 ejercicios)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Ejercicio</th>
+<th>Descripción</th>
+<th>API Utilizada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>URL Default</strong></td>
+<td>Muestra URL predeterminada al cargar</td>
+<td><code>window.onload</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Descarga</strong></td>
+<td>Realiza petición y muestra contenido</td>
+<td><code>XMLHttpRequest.send()</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Estados</strong></td>
+<td>Monitorea readyState en tiempo real</td>
+<td><code>onreadystatechange</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Cabeceras</strong></td>
+<td>Extrae y muestra headers HTTP</td>
+<td><code>getAllResponseHeaders()</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Código Estado</strong></td>
+<td>Muestra código y texto de respuesta</td>
+<td><code>xhr.status</code>, <code>xhr.statusText</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="%F0%9F%92%BB-uso-de-la-aplicaci%C3%B3n">💻 Uso de la Aplicación</h2>
+<h3 id="ejercicio-1-detector-de-pal%C3%ADndromos">Ejercicio 1: Detector de Palíndromos</h3>
+<ol>
+<li>Ingresa una palabra o frase (ej: &quot;anita lava la tina&quot;)</li>
+<li>Haz clic en <strong>&quot;Verificar Palíndromo&quot;</strong></li>
+<li>Observa el resultado con análisis detallado</li>
+</ol>
+<p><strong>Casos de prueba:</strong></p>
+<pre class="hljs"><code><div>✅ &quot;Anita lava la tina&quot; → ES palíndromo
+✅ &quot;Reconocer&quot; → ES palíndromo
+❌ &quot;Hola mundo&quot; → NO es palíndromo
+</div></code></pre>
+<h3 id="ejercicio-2-comparador-de-n%C3%BAmeros">Ejercicio 2: Comparador de Números</h3>
+<ol>
+<li>Ingresa dos números (decimales permitidos)</li>
+<li>Haz clic en <strong>&quot;Comparar Números&quot;</strong></li>
+<li>Ve cuál es mayor o si son iguales</li>
+</ol>
+<p><strong>Casos de prueba:</strong></p>
+<pre class="hljs"><code><div>42 y 38 → 42 es MAYOR
+3.14 y 3.15 → 3.15 es MAYOR
+10 y 10 → Ambos son IGUALES
+</div></code></pre>
+<h3 id="ejercicio-3-extractor-de-vocales">Ejercicio 3: Extractor de Vocales</h3>
+<ol>
+<li>Ingresa una frase</li>
+<li>Haz clic en <strong>&quot;Mostrar Vocales&quot;</strong></li>
+<li>Observa la lista de vocales encontradas</li>
+</ol>
+<p><strong>Ejemplo:</strong></p>
+<pre class="hljs"><code><div>Entrada: &quot;Desarrollo web moderno&quot;
+Salida: e - a - o - o - e - o - e - o (8 vocales)
+</div></code></pre>
+<h3 id="ejercicio-4-contador-de-vocales">Ejercicio 4: Contador de Vocales</h3>
+<ol>
+<li>Ingresa una frase</li>
+<li>Haz clic en <strong>&quot;Contar Vocales&quot;</strong></li>
+<li>Ve el conteo individual con gráficos</li>
+</ol>
+<p><strong>Ejemplo:</strong></p>
+<pre class="hljs"><code><div>Entrada: &quot;JavaScript es fantástico&quot;
+Salida:
+  A: 4  |  E: 1  |  I: 2  |  O: 1  |  U: 0
+</div></code></pre>
+<h3 id="sistema-ajax">Sistema AJAX</h3>
+<ol>
+<li>La URL por defecto es <code>https://jsonplaceholder.typicode.com/posts/1</code></li>
+<li>Puedes cambiarla por cualquier API pública</li>
+<li>Haz clic en <strong>&quot;Mostrar Contenidos&quot;</strong></li>
+<li>Observa:
+<ul>
+<li>Estados de la petición en tiempo real</li>
+<li>Código HTTP de respuesta</li>
+<li>Cabeceras del servidor</li>
+<li>Contenido recibido (JSON o texto)</li>
+</ul>
+</li>
+</ol>
+<p><strong>APIs de prueba recomendadas:</strong></p>
+<pre class="hljs"><code><div>https://jsonplaceholder.typicode.com/users/1
+https://api.github.com/users/github
+https://cat-fact.herokuapp.com/facts
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%9B%A0%EF%B8%8F-tecnolog%C3%ADas-utilizadas">🛠️ Tecnologías Utilizadas</h2>
+<h3 id="frontend">Frontend</h3>
+<ul>
+<li><strong>HTML5</strong> - Estructura semántica</li>
+<li><strong>CSS3</strong> - Diseño responsivo con Flexbox/Grid</li>
+<li><strong>JavaScript ES6+</strong> - Lógica de aplicación</li>
+<li><strong>AJAX (XMLHttpRequest)</strong> - Comunicación asíncrona</li>
+</ul>
+<h3 id="backendgenerador">Backend/Generador</h3>
+<ul>
+<li><strong>Jekyll 4.3.0</strong> - Generador de sitios estáticos</li>
+<li><strong>Liquid</strong> - Motor de plantillas</li>
+<li><strong>Markdown/Kramdown</strong> - Formato de contenido</li>
+</ul>
+<h3 id="herramientas-de-desarrollo">Herramientas de Desarrollo</h3>
+<ul>
+<li><strong>Bundler</strong> - Gestión de dependencias Ruby</li>
+<li><strong>Git</strong> - Control de versiones</li>
+<li><strong>VS Code</strong> - Editor de código</li>
+<li><strong>DevTools</strong> - Depuración en navegador</li>
+</ul>
+<h3 id="tema-y-plugins">Tema y Plugins</h3>
+<ul>
+<li><strong>jekyll-theme-cayman</strong> - Tema base</li>
+<li><strong>jekyll-feed</strong> - Generación de RSS</li>
+</ul>
+<hr>
+<h2 id="%E2%9A%A0%EF%B8%8F-problemas-conocidos">⚠️ Problemas Conocidos</h2>
+<h3 id="1-cors-cross-origin-resource-sharing">1. CORS (Cross-Origin Resource Sharing)</h3>
+<p><strong>Problema:</strong> Algunas URLs externas pueden fallar debido a políticas CORS.</p>
+<p><strong>Solución:</strong></p>
+<ul>
+<li>Usa APIs públicas que permitan CORS</li>
+<li>Usa un proxy CORS (para desarrollo)</li>
+<li>Usa <code>fetch</code> con modo <code>no-cors</code> (limitaciones)</li>
+</ul>
+<p><strong>APIs con CORS habilitado:</strong></p>
+<pre class="hljs"><code><div>✅ JSONPlaceholder
+✅ GitHub API
+✅ Dog API
+✅ Cat Facts API
+</div></code></pre>
+<h3 id="2-warnings-de-sass">2. Warnings de Sass</h3>
+<p><strong>Problema:</strong> Jekyll muestra advertencias de deprecación de Sass.</p>
+<p><strong>Impacto:</strong> Solo son warnings, no afectan funcionalidad.</p>
+<p><strong>Solución futura:</strong> Actualizar sintaxis Sass cuando se lance Dart Sass 3.0.</p>
+<h3 id="3-layout-page-no-existe">3. Layout 'page' no existe</h3>
+<p><strong>Problema:</strong> Warning sobre <code>404.html</code> solicitando layout inexistente.</p>
+<p><strong>Solución:</strong> Crear <code>_layouts/page.html</code> o cambiar layout en <code>404.html</code>.</p>
+<hr>
+<h2 id="%F0%9F%A4%9D-contribuciones">🤝 Contribuciones</h2>
+<p>Las contribuciones son bienvenidas. Por favor:</p>
+<ol>
+<li>Fork el repositorio</li>
+<li>Crea una rama para tu feature (<code>git checkout -b feature/nueva-funcionalidad</code>)</li>
+<li>Commit tus cambios (<code>git commit -m 'Agregar nueva funcionalidad'</code>)</li>
+<li>Push a la rama (<code>git push origin feature/nueva-funcionalidad</code>)</li>
+<li>Abre un Pull Request</li>
+</ol>
+<h3 id="gu%C3%ADa-de-estilo">Guía de Estilo</h3>
+<ul>
+<li>Código JavaScript: Standard JS</li>
+<li>CSS: BEM naming convention</li>
+<li>Commits: Conventional Commits</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%91%A8%E2%80%8D%F0%9F%92%BB-autor">👨‍💻 Autor</h2>
+<p><strong>Alejandro de Mendoza Tovar</strong></p>
+<ul>
+<li>🎓 Universidad Internacional de La Rioja (UNIR)</li>
+<li>📧 Email: alejandro.demendoza@estudiante.unir.net</li>
+<li>🔗 GitHub: <a href="https://github.com/alejandroDeMendoza">@alejandroDeMendoza</a></li>
+<li>💼 LinkedIn: <a href="https://linkedin.com/in/alejandro-de-mendoza">Alejandro de Mendoza</a></li>
+</ul>
+<h3 id="informaci%C3%B3n-acad%C3%A9mica">Información Académica</h3>
+<ul>
+<li><strong>Asignatura:</strong> Desarrollo de Aplicaciones en Red</li>
+<li><strong>Profesor:</strong> Ing. Juan Carlos Reyes Figueroa</li>
+<li><strong>Semestre:</strong> Quinto</li>
+<li><strong>Año:</strong> 2025</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%84-licencia">📄 Licencia</h2>
+<p>Este proyecto está bajo la Licencia MIT - ver el archivo <a href="LICENSE">LICENSE</a> para más detalles.</p>
+<pre class="hljs"><code><div>MIT License
+
+Copyright (c) 2025 Alejandro de Mendoza Tovar
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</div></code></pre>
+<hr>
+<h2 id="%F0%9F%99%8F-agradecimientos">🙏 Agradecimientos</h2>
+<ul>
+<li><strong>Jekyll Team</strong> - Por el excelente generador de sitios estáticos</li>
+<li><strong>GitHub</strong> - Por el alojamiento y versionado</li>
+<li><strong>JSONPlaceholder</strong> - Por la API de pruebas gratuita</li>
+<li><strong>MDN Web Docs</strong> - Por la documentación técnica</li>
+<li><strong>UNIR</strong> - Por la formación académica</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%9A-referencias">📚 Referencias</h2>
+<h3 id="documentaci%C3%B3n-oficial">Documentación Oficial</h3>
+<ul>
+<li><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">MDN - JavaScript</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/Guide/AJAX">MDN - AJAX</a></li>
+<li><a href="https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest">XMLHttpRequest API</a></li>
+</ul>
+<h3 id="tutoriales-y-recursos">Tutoriales y Recursos</h3>
+<ul>
+<li><a href="https://javascript.info/xmlhttprequest">JavaScript.info - AJAX</a></li>
+<li><a href="https://www.w3schools.com/js/js_ajax_intro.asp">W3Schools - AJAX Tutorial</a></li>
+<li><a href="https://regex101.com/">Regex101</a> - Testing de expresiones regulares</li>
+</ul>
+<h3 id="apis-p%C3%BAblicas-utilizadas">APIs Públicas Utilizadas</h3>
+<ul>
+<li><a href="https://jsonplaceholder.typicode.com/">JSONPlaceholder</a></li>
+<li><a href="https://github.com/public-apis/public-apis">Public APIs List</a></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%9E-soporte">📞 Soporte</h2>
+<p>Si encuentras algún problema o tienes preguntas:</p>
+<ol>
+<li><strong>Issues:</strong> Abre un issue en GitHub</li>
+<li><strong>Email:</strong> alejandro.demendoza@estudiante.unir.net</li>
+<li><strong>Documentación:</strong> Consulta este README</li>
+</ol>
+<hr>
+<div align="center">
+<p><strong>⭐ Si este proyecto te fue útil, considera darle una estrella en GitHub ⭐</strong></p>
+<p>Hecho con ❤️ por Alejandro de Mendoza Tovar</p>
+<p><a href="#-laboratorio-javascript-y-ajax">Volver arriba ↑</a></p>
+</div>
+
+</body>
+</html>

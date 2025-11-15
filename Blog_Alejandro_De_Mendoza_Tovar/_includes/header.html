@@ -1,0 +1,16 @@
+<header class="page-header" role="banner">
+  <h1 class="project-name">{{ site.title | default: "Blog de Alejandro" }}</h1>
+  <h2 class="project-tagline">
+    {{ site.description | default: "Un espacio para aprender sobre desarrollo
+    web e inteligencia artificial" }}
+  </h2>
+
+  <nav class="nav">
+    <a href="{{ '/' | relative_url }}" class="btn">Inicio</a>
+    <a href="{{ '/blog/' | relative_url }}" class="btn">Blog</a>
+    <a href="{{ '/about/' | relative_url }}" class="btn">Acerca de</a>
+    <a href="{{ '/laboratorio-js-ajax/' | relative_url }}" class="btn"
+      >Lab JS/AJAX</a
+    >
+  </nav>
+</header>
