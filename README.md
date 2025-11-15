@@ -445,7 +445,7 @@ Las contribuciones son bienvenidas. Por favor:
 **Alejandro de Mendoza Tovar**
 
 - 🎓 Universidad Internacional de La Rioja (UNIR)
-- 🔗 GitHub: [@alejandroDeMendoza](https://github.com/AlejoTechEngineer)
+- 🔗 GitHub: (https://github.com/AlejoTechEngineer)
 
 ### Información Académica
 
