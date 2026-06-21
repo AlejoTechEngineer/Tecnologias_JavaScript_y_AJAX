@@ -1,12 +1,18 @@
+<div align="center">
+
 # 🚀 Laboratorio JavaScript y AJAX
 
 ## Desarrollo de Aplicaciones Web Interactivas
 
-![Jekyll](https://img.shields.io/badge/Jekyll-4.3.0-red?style=flat-square&logo=jekyll)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=flat-square&logo=javascript)
-![HTML5](https://img.shields.io/badge/HTML5-Semantico-orange?style=flat-square&logo=html5)
-![CSS3](https://img.shields.io/badge/CSS3-Moderno-blue?style=flat-square&logo=css3)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Jekyll](https://img.shields.io/badge/Jekyll-4.3.0-red?style=for-the-badge&logo=jekyll)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge&logo=javascript)
+![HTML5](https://img.shields.io/badge/HTML5-Semantico-orange?style=for-the-badge&logo=html5)
+![CSS3](https://img.shields.io/badge/CSS3-Moderno-blue?style=for-the-badge&logo=css3)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+</div>
+
+---
 
 ---
 
