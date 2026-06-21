@@ -19,6 +19,7 @@
 ## 📋 Tabla de Contenidos
 
 - [Descripción](#-descripción)
+- [Arquitectura](#arquitectura)
 - [Características](#-características)
 - [Requisitos Previos](#-requisitos-previos)
 - [Instalación](#-instalación)
@@ -31,6 +32,21 @@
 - [Contribuciones](#-contribuciones)
 - [Autor](#-autor)
 - [Licencia](#-licencia)
+
+---
+
+## 📖 Descripción
+
+Este proyecto es un **laboratorio académico** desarrollado para la asignatura de **Desarrollo de Aplicaciones en Red**, que implementa ejercicios prácticos de **JavaScript** y **AJAX** integrados en un blog personal creado con **Jekyll**.
+
+El laboratorio demuestra competencias en:
+
+- ✅ Manipulación del DOM
+- ✅ Validación de datos con JavaScript
+- ✅ Expresiones regulares avanzadas
+- ✅ Peticiones asíncronas con XMLHttpRequest
+- ✅ Manejo de estados HTTP
+- ✅ Procesamiento de respuestas JSON
 
 ---
 
@@ -49,21 +65,6 @@ flowchart TD
     C --> J[Visualizacion de Cabeceras HTTP - getAllResponseHeaders]
     G & H & I & J --> K[(JSONPlaceholder API - Respuestas JSON/texto)]
 ```
-
-## 📖 Descripción
-
-Este proyecto es un **laboratorio académico** desarrollado para la asignatura de **Desarrollo de Aplicaciones en Red**, que implementa ejercicios prácticos de **JavaScript** y **AJAX** integrados en un blog personal creado con **Jekyll**.
-
-El laboratorio demuestra competencias en:
-
-- ✅ Manipulación del DOM
-- ✅ Validación de datos con JavaScript
-- ✅ Expresiones regulares avanzadas
-- ✅ Peticiones asíncronas con XMLHttpRequest
-- ✅ Manejo de estados HTTP
-- ✅ Procesamiento de respuestas JSON
-
----
 
 ## ✨ Características
 
