@@ -34,6 +34,22 @@
 
 ---
 
+## Arquitectura
+
+```mermaid
+flowchart TD
+    A[Blog Jekyll 4.3 - Blog_Alejandro_De_Mendoza_Tovar/] --> B[Ejercicios JavaScript]
+    A --> C[Ejercicios AJAX]
+    B --> D[Detector de Palindromos - Normalizacion Unicode NFD]
+    B --> E[Comparador de Numeros - Validacion decimal]
+    B --> F[Extractor y Contador de Vocales - Regex avanzado]
+    C --> G[Carga de URL por Defecto - JSONPlaceholder API]
+    C --> H[Descarga de Contenidos - XMLHttpRequest GET async]
+    C --> I[Monitoreo de Estados readyState - 5 estados en tiempo real]
+    C --> J[Visualizacion de Cabeceras HTTP - getAllResponseHeaders]
+    G & H & I & J --> K[(JSONPlaceholder API - Respuestas JSON/texto)]
+```
+
 ## 📖 Descripción
 
 Este proyecto es un **laboratorio académico** desarrollado para la asignatura de **Desarrollo de Aplicaciones en Red**, que implementa ejercicios prácticos de **JavaScript** y **AJAX** integrados en un blog personal creado con **Jekyll**.
@@ -540,18 +556,3 @@ Hecho con ❤️ por Alejandro de Mendoza Tovar
 [Volver arriba ↑](#-laboratorio-javascript-y-ajax)
 
 </div>
-## Arquitectura
-
-```mermaid
-flowchart TD
-    A[Blog Jekyll 4.3 - Blog_Alejandro_De_Mendoza_Tovar/] --> B[Ejercicios JavaScript]
-    A --> C[Ejercicios AJAX]
-    B --> D[Detector de Palindromos - Normalizacion Unicode NFD]
-    B --> E[Comparador de Numeros - Validacion decimal]
-    B --> F[Extractor y Contador de Vocales - Regex avanzado]
-    C --> G[Carga de URL por Defecto - JSONPlaceholder API]
-    C --> H[Descarga de Contenidos - XMLHttpRequest GET async]
-    C --> I[Monitoreo de Estados readyState - 5 estados en tiempo real]
-    C --> J[Visualizacion de Cabeceras HTTP - getAllResponseHeaders]
-    G & H & I & J --> K[(JSONPlaceholder API - Respuestas JSON/texto)]
-```
